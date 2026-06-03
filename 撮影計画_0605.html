@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6月5日 撮影計画【内部相談用】</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", sans-serif;
+    background: #faf8f5;
+    color: #333;
+    padding: 32px 20px 60px;
+  }
+  .container { max-width: 720px; margin: 0 auto; }
+
+  h1 {
+    font-size: 22px;
+    color: #5a3e2b;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 32px;
+  }
+
+  .section { margin-bottom: 32px; }
+  .section-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #9a6040;
+    letter-spacing: .1em;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #f0ddd0;
+  }
+
+  /* 事前確認 */
+  .check-list { list-style: none; }
+  .check-list li {
+    background: white;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.06);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  .check-list li input { width: 18px; height: 18px; accent-color: #c47a50; cursor: pointer; flex-shrink: 0; }
+  .check-list li:has(input:checked) { color: #bbb; text-decoration: line-through; }
+  .note { font-size: 12px; color: #aaa; margin-top: 6px; padding-left: 4px; }
+
+  /* タイムブロック */
+  .time-block {
+    background: white;
+    border-radius: 14px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    box-shadow: 0 1px 6px rgba(0,0,0,.07);
+  }
+  .time-header {
+    padding: 12px 18px;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .time-header.orange { background: #e07040; }
+  .time-header.green  { background: #4a9970; }
+  .time-header .time  { font-size: 18px; letter-spacing: .02em; }
+  .time-header .label { font-size: 13px; opacity: .9; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  th {
+    text-align: left;
+    font-size: 11px;
+    color: #aaa;
+    padding: 8px 16px;
+    border-bottom: 1px solid #f0e8e0;
+    letter-spacing: .08em;
+  }
+  td {
+    padding: 11px 16px;
+    border-bottom: 1px solid #f8f0ea;
+    vertical-align: middle;
+  }
+  tr:last-child td { border-bottom: none; }
+  td:first-child { width: 36px; }
+  td:nth-child(2) { width: 28px; color: #bbb; font-size: 13px; }
+  td.place {
+    font-size: 12px;
+    color: #aaa;
+    width: 90px;
+  }
+  tr:has(input:checked) td { color: #ccc; text-decoration: line-through; }
+  tr:has(input:checked) td.warn-cell { color: #ccc; }
+  input[type="checkbox"] { width: 16px; height: 16px; accent-color: #c47a50; cursor: pointer; }
+
+  /* 要相談バッジ */
+  .warn-cell { }
+  .warn-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    color: #c04040;
+    background: #fff0f0;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  /* 相談セクション */
+  .alert-box {
+    background: #fff8f0;
+    border: 1.5px solid #f0c090;
+    border-radius: 14px;
+    padding: 20px 22px;
+  }
+  .alert-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #c04040;
+    margin-bottom: 14px;
+  }
+  .alert-list { list-style: none; }
+  .alert-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 12px;
+    line-height: 1.6;
+  }
+  .alert-list li input { margin-top: 3px; width: 16px; height: 16px; accent-color: #c04040; cursor: pointer; flex-shrink: 0; }
+
+  /* メモ欄 */
+  .memo-area {
+    width: 100%;
+    border: 1px solid #e8d8c8;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #444;
+    background: white;
+    resize: vertical;
+    margin-top: 10px;
+  }
+  .memo-label { font-size: 12px; color: #aaa; margin-top: 16px; margin-bottom: 4px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1>📸 6月5日 撮影計画</h1>
+  <p class="subtitle">はじまりの家 そら｜内部相談用｜11:30〜13:00（1時間半）</p>
+
+  <!-- 事前確認 -->
+  <div class="section">
+    <div class="section-title">✅ 事前確認（金曜日まで）</div>
+    <ul class="check-list">
+      <li><input type="checkbox"> ゆうこさん・梅田さんの家族・渡辺さんに確認</li>
+      <li><input type="checkbox"> ボランティア確認</li>
+      <li><input type="checkbox"> れいこさん確認</li>
+    </ul>
+    <p class="note">※スタッフ（ゆか・るり・ひろこ）はOK済み</p>
+  </div>
+
+  <!-- 11:30〜12:00 人物 -->
+  <div class="section">
+    <div class="section-title">📷 撮影スケジュール</div>
+
+    <div class="time-block">
+      <div class="time-header orange">
+        <span class="time">11:30〜12:00</span>
+        <span class="label">人物・活動（30分）｜カフェの名残りで人がいる間に優先</span>
+      </div>
+      <table>
+        <thead><tr><th></th><th>カット</th><th>場所</th></tr></thead>
+        <tbody>
+          <tr><td><input type="checkbox"></td><td>集合写真・全員</td><td class="place">玄関前</td></tr>
+          <tr><td><input type="checkbox"></td><td>個人写真・3人それぞれ</td><td class="place">玄関前</td></tr>
+          <tr><td><input type="checkbox"></td><td>リビング：談笑の様子</td><td class="place">リビング</td></tr>
+          <tr><td><input type="checkbox"></td><td>リビング：梅田さんとゆうこさん（後ろ向き）</td><td class="place">リビング</td></tr>
+          <tr><td><input type="checkbox"></td><td>ゆかさんの料理姿・料理（完成品・食材・食器）</td><td class="place">キッチン</td></tr>
+          <tr><td><input type="checkbox"></td><td class="warn-cell">アロママッサージ<span class="warn-badge">⚠️ 要相談</span></td><td class="place">ケア場所</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 12:00〜13:00 施設 -->
+    <div class="time-block">
+      <div class="time-header green">
+        <span class="time">12:00〜13:00</span>
+        <span class="label">施設（1時間）｜外→1階→2階の順</span>
+      </div>
+      <table>
+        <thead><tr><th></th><th>カット</th><th>場所</th></tr></thead>
+        <tbody>
+          <tr><td><input type="checkbox"></td><td>看板・車・玄関</td><td class="place">外</td></tr>
+          <tr><td><input type="checkbox"></td><td>庭・金木犀</td><td class="place">庭</td></tr>
+          <tr><td><input type="checkbox"></td><td>リビング全体・キッチン全体・スタッフ談笑</td><td class="place">1階</td></tr>
+          <tr><td><input type="checkbox"></td><td>1階各部屋・トイレ・風呂</td><td class="place">1階</td></tr>
+          <tr><td><input type="checkbox"></td><td>2階：陽が当たる部屋・3部屋</td><td class="place">2階</td></tr>
+          <tr><td><input type="checkbox"></td><td>2階各部屋・トイレ・風呂</td><td class="place">2階</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 相談事項 -->
+  <div class="section">
+    <div class="section-title">⚠️ 相談事項：アロママッサージをどうするか</div>
+    <div class="alert-box">
+      <div class="alert-title">3人で方針を決めたいこと</div>
+      <ul class="alert-list">
+        <li><input type="checkbox"> 誰に被写体になってもらうか（スタッフ同士のデモ？実際のケアシーン？）</li>
+        <li><input type="checkbox"> 周り方</li>
+        <li><input type="checkbox"> ケアどうする？</li>
+      </ul>
+      <p class="memo-label">📝 相談メモ</p>
+      <textarea class="memo-area" rows="3" placeholder="ここに方針・決定事項をメモ..."></textarea>
+    </div>
+  </div>
+
+  <!-- 梅野さんに確認したいこと -->
+  <div class="section">
+    <div class="section-title">⚠️ 梅野さんに確認したいこと</div>
+    <div class="alert-box">
+      <div class="alert-title">梅野さんに確認したいこと</div>
+      <ul class="alert-list">
+        <li><input type="checkbox"> 看板・車・玄関など前回撮ってもらったもので使えるもの</li>
+      </ul>
+      <p class="memo-label">📝 確認メモ</p>
+      <textarea class="memo-area" rows="3" placeholder="ここに確認結果をメモ..."></textarea>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
