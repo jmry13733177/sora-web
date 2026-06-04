@@ -134,13 +134,36 @@
     color: #c07030;
     margin-bottom: 10px;
   }
-  .confirm-card ul {
-    padding-left: 16px;
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 7px 0;
+    border-bottom: 1px solid #f5e8d8;
     font-size: 0.85rem;
-    color: #555;
-    line-height: 1.9;
+    color: #444;
+    line-height: 1.5;
+    cursor: pointer;
   }
-  .confirm-card ul li { list-style: disc; }
+  .check-item:last-child { border-bottom: none; }
+  .check-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    accent-color: #c9a87c;
+    cursor: pointer;
+  }
+  .check-item.done span {
+    text-decoration: line-through;
+    color: #bbb;
+  }
+  .ref-link {
+    display: block;
+    font-size: 0.78rem;
+    color: #9bb8d4;
+    margin-top: 2px;
+    word-break: break-all;
+  }
 
   .footer {
     text-align: center;
@@ -224,21 +247,54 @@
 <!-- 確認事項 -->
 <div class="section-label">梅野さんに確認したいこと</div>
 <div class="confirm-card">
-  <div class="confirm-title">❓ 事前に確認させてください</div>
-  <ul>
-    <li>看板・車・玄関など前回撮ってもらったもので使えるものはありますか？</li>
-    <li>お風呂にお湯を張っていた方がいいですか？</li>
-    <li>前回来た時のそらの間での写真は使えますか？</li>
-    <li><span class="star">★</span> HPトップに使う写真のイメージを教えてください</li>
-    <li>HPのイメージ（全体の雰囲気）について</li>
-    <li>集合写真の時、車はどこに置けばいいですか？</li>
-    <li>集合写真のイメージを伝えたい（出窓？）</li>
-    <li>2階シャワーの水あか（撮影に影響しますか？）</li>
-    <li>2階の出窓の写真について</li>
-  </ul>
+  <div class="confirm-title">❓ 確認チェックシート</div>
+
+  <label class="check-item">
+    <input type="checkbox" data-key="u0">
+    <span>看板・車・玄関など前回撮ってもらったもので使えるものはありますか？</span>
+  </label>
+  <label class="check-item">
+    <input type="checkbox" data-key="u1">
+    <span>お風呂にお湯を張っていた方がいいですか？</span>
+  </label>
+  <label class="check-item">
+    <input type="checkbox" data-key="u2">
+    <span>
+      HPのトップにこのような感じで写真を数枚載せるイメージです。<br>
+      <a class="ref-link" href="https://hospital.teamblue.jp/" target="_blank">https://hospital.teamblue.jp/</a>
+      <span class="star">★</span> の写真をトップに載せたいと思っています。
+    </span>
+  </label>
+  <label class="check-item">
+    <input type="checkbox" data-key="u3">
+    <span>集合写真の時、車はどこに置けばいいですか？</span>
+  </label>
+  <label class="check-item">
+    <input type="checkbox" data-key="u4">
+    <span>集合写真の場所は玄関前？出窓の前？当日指示をお願いします。</span>
+  </label>
+  <label class="check-item">
+    <input type="checkbox" data-key="u5">
+    <span>2階シャワーの水あか（撮影に影響しますか？）</span>
+  </label>
 </div>
 
 <div class="footer">はじまりの家 そら｜2026.6.5</div>
+
+<script>
+  const PREFIX = 'umeno_0605_';
+  document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+    const key = PREFIX + cb.dataset.key;
+    if (localStorage.getItem(key) === 'true') {
+      cb.checked = true;
+      cb.closest('.check-item').classList.add('done');
+    }
+    cb.addEventListener('change', () => {
+      localStorage.setItem(key, cb.checked);
+      cb.closest('.check-item').classList.toggle('done', cb.checked);
+    });
+  });
+</script>
 
 </body>
 </html>
