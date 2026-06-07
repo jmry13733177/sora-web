@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>FAX DM｜訪問看護ステーション管理者・経営者の方へ</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    background: #f0f0f0;
+    padding: 20px;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    background: #fff;
+    margin: 0 auto;
+    padding: 10mm 12mm 10mm 12mm;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  }
+
+  /* タグライン */
+  .tagline {
+    text-align: center;
+    font-size: 9pt;
+    border: 1px solid #000;
+    padding: 5px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+
+  /* メインヘッドライン */
+  .headline-box {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 22px 10px 20px;
+    margin-bottom: 12px;
+  }
+  .headline-box .main-title {
+    font-size: 28pt;
+    font-weight: bold;
+    line-height: 1.4;
+    letter-spacing: 1px;
+  }
+  .headline-box .sub-title {
+    font-size: 11pt;
+    margin-top: 10px;
+    color: #ddd;
+    line-height: 1.8;
+  }
+
+  /* 問題提起 */
+  .problem-section {
+    border: 2px solid #000;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+  }
+  .problem-section .target-label {
+    font-size: 8.5pt;
+    font-weight: bold;
+    background: #000;
+    color: #fff;
+    display: inline-block;
+    padding: 2px 10px;
+    margin-bottom: 8px;
+  }
+  .problem-section .problems {
+    font-size: 11pt;
+    line-height: 2.0;
+  }
+  .problem-section .problems li {
+    list-style: none;
+    padding-left: 1.4em;
+    text-indent: -1.4em;
+  }
+  .problem-section .problems li::before {
+    content: "✔ ";
+    font-weight: bold;
+  }
+
+  /* 中段：講師＋セミナー詳細 */
+  .middle-section {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    align-items: stretch;
+  }
+
+  /* セミナー詳細（左・広め） */
+  .seminar-box {
+    flex: 1;
+  }
+  .seminar-box .label {
+    font-size: 8pt;
+    font-weight: bold;
+    background: #000;
+    color: #fff;
+    display: inline-block;
+    padding: 2px 8px;
+    margin-bottom: 8px;
+  }
+
+  /* 講師（右・固定幅） */
+  .lecturer-box {
+    width: 70mm;
+    flex-shrink: 0;
+    border: 1.5px solid #000;
+    padding: 10px;
+  }
+  .lecturer-box .label {
+    font-size: 8pt;
+    font-weight: bold;
+    background: #000;
+    color: #fff;
+    display: inline-block;
+    padding: 2px 8px;
+    margin-bottom: 8px;
+  }
+  /* 写真＋名前・肩書き */
+  .lecturer-inner {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    margin-top: 8px;
+  }
+  .lecturer-photo {
+    width: 95px;
+    height: 120px;
+    border: 1px solid #ccc;
+    flex-shrink: 0;
+    object-fit: cover;
+    object-position: top center;
+  }
+  .lecturer-info .name {
+    font-size: 15pt;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 3px;
+  }
+  .lecturer-info .name-kana {
+    font-size: 8pt;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  .lecturer-info .title {
+    font-size: 7pt;
+    line-height: 1.6;
+    color: #222;
+    white-space: nowrap;
+  }
+  /* 経歴（下段・全幅） */
+  .lecturer-career {
+    border-top: 1px solid #ccc;
+    padding-top: 8px;
+    font-size: 9.5pt;
+    line-height: 1.8;
+    color: #333;
+  }
+  .seminar-detail {
+    padding: 4px 0;
+    margin-bottom: 8px;
+  }
+  .seminar-overview-title {
+    font-size: 11pt;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  .seminar-row {
+    font-size: 10pt;
+    line-height: 2.0;
+  }
+  .seminar-row .key {
+    font-weight: bold;
+  }
+  .seminar-row .val { }
+  .seminar-row .red { color: #cc0000; font-weight: bold; }
+  .seminar-note {
+    font-size: 8.5pt;
+    color: #444;
+    margin-top: 2px;
+    line-height: 1.6;
+  }
+  .free-badge { display: none; }
+
+  /* QR＋申込み */
+  .cta-box {
+    border: 2px solid #000;
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .cta-text { flex: 1; }
+  .cta-text .cta-main {
+    font-size: 11pt;
+    font-weight: bold;
+    margin-bottom: 4px;
+    line-height: 1.4;
+  }
+  .cta-text .cta-sub {
+    font-size: 8pt;
+    color: #444;
+    line-height: 1.5;
+  }
+  .qr-wrap {
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .qr-placeholder {
+    width: 76px;
+    height: 76px;
+    border: 2px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 7pt;
+    color: #888;
+    line-height: 1.4;
+    text-align: center;
+    margin: 0 auto 3px;
+    background: #fafafa;
+  }
+  .qr-wrap .qr-label {
+    font-size: 8pt;
+    font-weight: bold;
+  }
+
+  /* フッター */
+  .footer {
+    border-top: 1px solid #aaa;
+    margin-top: 10px;
+    padding-top: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 8pt;
+  }
+  .footer .company { line-height: 1.7; }
+  .footer .company .name { font-weight: bold; font-size: 9.5pt; }
+  .footer .optout {
+    text-align: right;
+    font-size: 7.5pt;
+    color: #555;
+    line-height: 1.6;
+  }
+  .fax-optout {
+    border: 1px solid #888;
+    padding: 4px 8px;
+    font-size: 7.5pt;
+    display: inline-block;
+    margin-top: 3px;
+  }
+
+  @media print {
+    body { background: none; padding: 0; }
+    .page { box-shadow: none; margin: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- タグライン -->
+  <div class="tagline">訪問看護ステーション　経営者・管理者の方へ　無料ウェブセミナーのご案内</div>
+
+  <!-- ヘッドライン -->
+  <div class="headline-box">
+    <div class="main-title">がん末期の受け入れに<br>踏み切れない、本当の理由</div>
+    <div class="sub-title">「スタッフが怖がって、がん末期を断り続けている」<br>そんな状況を変えるヒントを、60分でお伝えします。</div>
+  </div>
+
+  <!-- このセミナーでわかること -->
+  <div class="problem-section">
+    <div class="target-label">▶ このセミナーでわかること</div>
+    <ul class="problems">
+      <li>スタッフが終末期ケアを避ける「本当の理由」</li>
+      <li>受け入れ件数が増え、売上が上がる仕組み</li>
+      <li>スタッフのやりがいと定着率を同時に上げる方法</li>
+    </ul>
+
+    <!-- アイコン3つ -->
+    <div style="display:flex; justify-content:space-around; margin-top:12px; padding-top:10px; border-top:1px solid #ccc;">
+
+      <!-- アイコン1：理由がわかる（虫めがね＋¥） -->
+      <div style="text-align:center; flex:1;">
+        <svg width="52" height="52" viewBox="0 0 52 52" fill="none" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="21" cy="21" r="13"/>
+          <line x1="30" y1="30" x2="44" y2="44"/>
+        </svg>
+        <div style="font-size:7.5pt; margin-top:4px; line-height:1.5;">スタッフが避ける<br>本当の理由がわかる</div>
+      </div>
+
+      <!-- アイコン2：売上UP（右上がりグラフ） -->
+      <div style="text-align:center; flex:1;">
+        <svg width="52" height="52" viewBox="0 0 52 52" fill="none" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6,40 6,8"/>
+          <polyline points="6,40 46,40"/>
+          <polyline points="10,34 20,22 30,26 44,10"/>
+          <polyline points="38,10 44,10 44,16"/>
+        </svg>
+        <div style="font-size:7.5pt; margin-top:4px; line-height:1.5;">受け入れ件数増加<br>売上が上がる</div>
+      </div>
+
+      <!-- アイコン3：スタッフ定着（人＋上矢印） -->
+      <div style="text-align:center; flex:1;">
+        <svg width="52" height="52" viewBox="0 0 52 52" fill="none" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="18" cy="13" r="6"/>
+          <path d="M6,40 C6,28 30,28 30,40"/>
+          <polyline points="36,26 36,10"/>
+          <polyline points="32,14 36,10 40,14"/>
+          <circle cx="36" cy="16" r="5" fill="white"/>
+          <path d="M26,40 C26,30 46,30 46,40"/>
+        </svg>
+        <div style="font-size:7.5pt; margin-top:4px; line-height:1.5;">やりがい向上<br>定着率UP</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 中段 -->
+  <div class="middle-section">
+
+    <!-- セミナー概要（左） -->
+    <div class="seminar-box">
+      <div class="label">▶ セミナー概要</div>
+      <div class="seminar-detail">
+        <div class="seminar-overview-title">★セミナー概要</div>
+        <div class="seminar-row"><span class="key">セミナー名：</span>『がん末期の受け入れに踏み切れない、本当の理由』</div>
+        <div class="seminar-row"><span class="key">開催方式：</span>オンライン動画配信（顔出し不要・聞くだけOK）</div>
+        <div class="seminar-row"><span class="key">開催日時：</span>お申し込み後、都合の良い日程をお選びください</div>
+        <div class="seminar-row"><span class="key">開催時間：</span>10:00〜11:00　14:00〜15:00　21:00〜22:00</div>
+        <div class="seminar-row"><span class="key">　　　　　</span>（お好きな時間にどうぞ）</div>
+        <div class="seminar-note">※開催時間直前でもお申し込み可能です</div>
+        <div class="seminar-row"><span class="key">視聴時間：</span>約60分</div>
+        <div class="seminar-row"><span class="key">参加費：</span><span class="red">無料</span></div>
+        <div class="seminar-row"><span class="key">講師：</span>谷合 美樹</div>
+      </div>
+
+      <!-- QR＋申込み -->
+      <div class="cta-box">
+        <div class="cta-text">
+          <div class="cta-main">こちらから<br>お申し込みください</div>
+          <div class="cta-sub" style="font-size:10pt; margin-top:4px;">※QRコードからお申込み後、<br>都合の良い日程をお選びいただけます</div>
+        </div>
+        <div class="qr-wrap">
+          <div class="qr-placeholder">QRコード<br>ここに<br>挿入</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 講師（右） -->
+    <div class="lecturer-box">
+      <div class="label">▶ 講師</div>
+      <!-- 写真＋名前・肩書き -->
+      <div class="lecturer-inner">
+        <img class="lecturer-photo" src="miki_profile.jpg" alt="谷合美樹">
+        <div class="lecturer-info">
+          <div class="name">谷合 美樹</div>
+          <div class="name-kana">たにあい みき</div>
+          <div class="title">
+            株式会社Wonderwall 代表取締役<br>
+            看護師・保健師<br>
+            がん専門相談員<br>
+            両立支援コーディネーター
+          </div>
+        </div>
+      </div>
+      <!-- 経歴（下段） -->
+      <div class="lecturer-career">
+        慶應義塾大学病院で25年間勤務。<br>
+        がん専門相談員として延べ<strong>1万人以上</strong>の患者・家族と向き合う。<br>
+        退職後はホスピス・訪問看護師として在宅・地域看護を経験。<br>
+        現在は東久留米市でホスピス<br>
+        「天国につながるホーム　そら」を運営しながら、訪問看護師向けの終末期ケア研修を提供。
+      </div>
+    </div>
+
+  </div>
+
+  <!-- フッター -->
+  <div class="footer">
+    <div class="company">
+      <div class="name">みきナース｜看護師研修</div>
+      <div>事務局</div>
+      <div>Email：jimukyoku@wonderwall-inc.com</div>
+    </div>
+    <div class="optout">
+      今後のFAX配信が不要な方は下記にご記入の上、<br>返信いただくか左記メールにてご連絡ください。<br>
+      <span class="fax-optout">FAX不要 □　FAX番号：＿＿＿＿＿＿＿＿＿＿</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
