@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚪 そら 10月オープンまでのフロー</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
+    background: #f5f0eb;
+    color: #333;
+    padding: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 16px 0 4px;
+    color: #5a3e2b;
+  }
+  .subtitle {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 20px;
+  }
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #888;
+    letter-spacing: 0.05em;
+    margin: 24px 0 8px;
+    padding-left: 4px;
+  }
+
+  /* タイムライン（全体像） */
+  .timeline { margin-bottom: 8px; }
+
+  .timeline-item {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 10px;
+  }
+
+  .t-time {
+    width: 62px;
+    min-width: 62px;
+    text-align: right;
+    padding-right: 10px;
+    padding-top: 14px;
+    font-size: 0.72rem;
+    font-weight: bold;
+    color: #888;
+    line-height: 1.2;
+  }
+
+  .t-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20px;
+    min-width: 20px;
+  }
+  .t-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #c9a87c;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px #c9a87c;
+    margin-top: 14px;
+    flex-shrink: 0;
+  }
+  .t-dot.blue   { background: #9bb8d4; box-shadow: 0 0 0 2px #9bb8d4; }
+  .t-dot.orange { background: #f4a35c; box-shadow: 0 0 0 2px #f4a35c; }
+  .t-dot.green  { background: #7ab87a; box-shadow: 0 0 0 2px #7ab87a; }
+  .t-tail {
+    flex: 1;
+    width: 2px;
+    background: #d9c9b8;
+    margin-top: 2px;
+  }
+  .timeline-item:last-child .t-tail { display: none; }
+
+  .t-card {
+    flex: 1;
+    background: #fff;
+    border-radius: 12px;
+    padding: 10px 14px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    margin-left: 8px;
+  }
+  .t-card.blue   { border-left: 4px solid #9bb8d4; }
+  .t-card.orange { border-left: 4px solid #f4a35c; }
+  .t-card.green  { border-left: 4px solid #7ab87a; }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+  .card-title { font-size: 0.95rem; font-weight: bold; color: #333; }
+  .badge {
+    font-size: 0.65rem;
+    padding: 2px 7px;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+  .badge-blue   { background: #e3ecf5; color: #5578a0; }
+  .badge-orange { background: #fde8d0; color: #c07030; }
+  .badge-green  { background: #d6edcf; color: #4a8a4a; }
+
+  .t-card ul {
+    padding-left: 16px;
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.85;
+  }
+  .t-card ul li { list-style: disc; }
+  .star { color: #e8a020; }
+
+  /* チェックリスト（月別） */
+  .checklist {
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px 16px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    margin-bottom: 12px;
+  }
+  .checklist-title {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #5a3e2b;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .checklist-progress {
+    font-size: 0.72rem;
+    color: #aaa;
+    margin-bottom: 10px;
+  }
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 7px 0;
+    border-bottom: 1px solid #f0e8e0;
+    font-size: 0.85rem;
+    color: #444;
+    line-height: 1.5;
+    cursor: pointer;
+  }
+  .check-item:last-child { border-bottom: none; }
+  .check-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    accent-color: #c9a87c;
+    cursor: pointer;
+    margin-top: 1px;
+  }
+  .check-item.done span {
+    text-decoration: line-through;
+    color: #bbb;
+  }
+  .note {
+    background: #fff8f0;
+    border-left: 4px solid #f4a35c;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 0.82rem;
+    color: #444;
+    line-height: 1.7;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    margin-bottom: 12px;
+  }
+
+  .footer {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #aaa;
+    margin: 24px 0 8px;
+  }
+</style>
+</head>
+<body>
+
+<h1>🚪 そら 10月オープンまでのフロー</h1>
+<div class="subtitle">2026年7月〜10月｜はじまりの家 そら（みき・文絵さん・さえさん共有用）</div>
+
+<div class="note">
+  📌 <strong>基準日</strong>：7/19 ホームページ完成予定を軸に逆算。<br>
+  チェックは各自の端末に保存されます（3人で見比べる時は口頭・スクショで共有してください）。
+</div>
+
+<div class="section-label">全体の流れ</div>
+<div class="timeline">
+
+  <div class="timeline-item">
+    <div class="t-time">7月前半</div>
+    <div class="t-line"><div class="t-dot blue"></div><div class="t-tail"></div></div>
+    <div class="t-card blue">
+      <div class="card-header">
+        <span class="card-title">🔧 準備</span>
+        <span class="badge badge-blue">〜7/19</span>
+      </div>
+      <ul>
+        <li>ホームページ完成（早川さん・7/19目標）</li>
+        <li>コンセプト・ブランディング最終確認</li>
+        <li>パンフレット（医療者用・家族用）作成</li>
+        <li>営業リスト作成</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="t-time">7月後半</div>
+    <div class="t-line"><div class="t-dot orange"></div><div class="t-tail"></div></div>
+    <div class="t-card orange">
+      <div class="card-header">
+        <span class="card-title">📣 発信・営業開始</span>
+        <span class="badge badge-orange">7/19〜7/31</span>
+      </div>
+      <ul>
+        <li>HP公開＋インスタ・YouTube発信開始</li>
+        <li>営業リスト先へご挨拶・パンフレット持参</li>
+        <li>紹介フロー設計を確定</li>
+        <li><span class="star">★</span> 内覧会（9/1〜9/14）の案内を対象先に送付</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="t-time">8月</div>
+    <div class="t-line"><div class="t-dot orange"></div><div class="t-tail"></div></div>
+    <div class="t-card orange">
+      <div class="card-header">
+        <span class="card-title">👥 体制づくり・営業本格化</span>
+      </div>
+      <ul>
+        <li>松江りなこさん採用・稼働開始（徐々に）</li>
+        <li>最小スタッフ体制の確保</li>
+        <li>営業先への訪問・関係構築を本格化</li>
+        <li>医療者向け内覧の受け入れ開始</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="t-time">9月</div>
+    <div class="t-line"><div class="t-dot green"></div><div class="t-tail"></div></div>
+    <div class="t-card green">
+      <div class="card-header">
+        <span class="card-title">🏠 内覧・最終調整</span>
+        <span class="badge badge-green">内覧会 9/1〜9/14</span>
+      </div>
+      <ul>
+        <li><span class="star">★</span> 医療者向け内覧会本番（9/1〜9/14）</li>
+        <li>最終マニュアル・記録フロー確定</li>
+        <li>入居セット・必要物品の最終チェック</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="t-time">10月</div>
+    <div class="t-line"><div class="t-dot green"></div></div>
+    <div class="t-card green">
+      <div class="card-header">
+        <span class="card-title">🎉 稼働開始</span>
+      </div>
+      <ul>
+        <li><span class="star">★</span> 初回受け入れ</li>
+        <li>記録・振り返り運用開始</li>
+        <li>課題整理→マニュアル化→次展開へ</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<!-- 月別チェックリスト -->
+<div class="section-label">やること（月別チェックリスト）</div>
+
+<div class="checklist">
+  <div class="checklist-title">🔧 7月前半（〜7/19）</div>
+  <div class="checklist-progress">HP完成まで</div>
+  <label class="check-item"><input type="checkbox" data-key="p1_1"><span>ホームページ完成（早川さん担当）</span></label>
+  <label class="check-item"><input type="checkbox" data-key="p1_2"><span>コンセプト・ターゲット設定の最終確認（「ホスピス」ではなく「はじまりの家」「天国につなぐホーム」で統一）</span></label>
+  <label class="check-item"><input type="checkbox" data-key="p1_3"><span>パンフレット（医療者用）の内容作成</span></label>
+  <label class="check-item"><input type="checkbox" data-key="p1_4"><span>パンフレット（家族用）の内容作成</span></label>
+  <label class="check-item"><input type="checkbox" data-key="p1_5"><span>環境整備・最低限マニュアルの整理</span></label>
+  <label class="check-item"><input type="checkbox" data-key="p1_6"><span>営業リスト（対象先の洗い出し）作成</span></label>
+</div>
+
+<div class="checklist">
+  <div class="checklist-title">📣 7月後半（7/19〜7/31）</div>
+  <div class="checklist-progress">発信・営業開始</div>
+  <label class="check-item"><input type="checkbox" data-key="p2_1"><span>HP公開に合わせてインスタ・YouTube等で発信開始</span></label>
+  <label class="check-item"><input type="checkbox" data-key="p2_2"><span>営業リスト先へパンフレット持参でご挨拶・説明開始</span></label>
+  <label class="check-item"><input type="checkbox" data-key="p2_3"><span>紹介フロー設計を確定（誰から誰に、どう紹介が流れるか）</span></label>
+  <label class="check-item"><input type="checkbox" data-key="p2_4"><span>内覧会（9/1〜9/14・医療者向け）の案内を対象先に送付</span></label>
+</div>
+
+<div class="checklist">
+  <div class="checklist-title">👥 8月</div>
+  <div class="checklist-progress">体制づくり・営業本格化</div>
+  <label class="check-item"><input type="checkbox" data-key="p3_1"><span>松江りなこさんの採用・稼働開始（徐々に）</span></label>
+  <label class="check-item"><input type="checkbox" data-key="p3_2"><span>最小スタッフ体制の確保・動き方の共有</span></label>
+  <label class="check-item"><input type="checkbox" data-key="p3_3"><span>営業リスト対象先への訪問・関係構築を本格化</span></label>
+  <label class="check-item"><input type="checkbox" data-key="p3_4"><span>医療者向け内覧の受け入れ開始</span></label>
+</div>
+
+<div class="checklist">
+  <div class="checklist-title">🏠 9月</div>
+  <div class="checklist-progress">内覧・最終調整｜内覧会：9/1（火）〜9/14（月）</div>
+  <label class="check-item"><input type="checkbox" data-key="p4_1"><span>医療者向け内覧会本番（9/1〜9/14）・利用イメージ提示</span></label>
+  <label class="check-item"><input type="checkbox" data-key="p4_2"><span>初回受け入れに向けた最終マニュアル・記録フローの確定</span></label>
+  <label class="check-item"><input type="checkbox" data-key="p4_3"><span>入居セット・必要物品・入居時アナムネの最終チェック</span></label>
+</div>
+
+<div class="checklist">
+  <div class="checklist-title">🎉 10月</div>
+  <div class="checklist-progress">稼働開始</div>
+  <label class="check-item"><input type="checkbox" data-key="p5_1"><span>初回受け入れ</span></label>
+  <label class="check-item"><input type="checkbox" data-key="p5_2"><span>記録・振り返りの運用開始</span></label>
+  <label class="check-item"><input type="checkbox" data-key="p5_3"><span>課題整理→マニュアル化→次展開（フランチャイズ含む）へ</span></label>
+</div>
+
+<div class="footer">はじまりの家 そら｜10月オープンまでのフロー</div>
+
+<script>
+  const PREFIX = 'sora_open_flow_';
+  document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+    const key = PREFIX + cb.dataset.key;
+    if (localStorage.getItem(key) === 'true') {
+      cb.checked = true;
+      cb.closest('.check-item').classList.add('done');
+    }
+    cb.addEventListener('change', () => {
+      localStorage.setItem(key, cb.checked);
+      cb.closest('.check-item').classList.toggle('done', cb.checked);
+    });
+  });
+</script>
+
+</body>
+</html>
