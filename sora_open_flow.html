@@ -11,8 +11,17 @@
     background: #f5f0eb;
     color: #333;
     padding: 16px;
-    max-width: 600px;
+    max-width: 1180px;
     margin: 0 auto;
+  }
+  .two-col {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 28px;
+    align-items: start;
+  }
+  @media (max-width: 820px) {
+    .two-col { grid-template-columns: 1fr; }
   }
   h1 {
     font-size: 1.2rem;
@@ -198,6 +207,9 @@
   チェックは各自の端末に保存されます（3人で見比べる時は口頭・スクショで共有してください）。
 </div>
 
+<div class="two-col">
+<div class="col-left">
+
 <div class="section-label">全体の流れ</div>
 <div class="timeline">
 
@@ -210,9 +222,9 @@
         <span class="badge badge-blue">〜7/19</span>
       </div>
       <ul>
-        <li>ホームページ完成（早川さん・えりさん・7/19目標）</li>
+        <li><a href="https://docs.google.com/spreadsheets/d/1S-VbxzH4R-fYNp0Thkz_SP0giRLumO13s6XnVjRh9T4/edit?usp=sharing" target="_blank" onclick="event.stopPropagation()">ホームページ完成（早川さん・えりさん・7/19目標）📋</a></li>
         <li>パンフレット作成（さえさん）</li>
-        <li>営業リスト作成（みき）</li>
+        <li><a href="https://docs.google.com/spreadsheets/d/1ZiN2e5PuEWc8rC1JGORzjL3OSLOTlGj0kcJM8mnmYQw/edit?usp=sharing" target="_blank">営業リスト作成（みき）📋</a></li>
       </ul>
     </div>
   </div>
@@ -228,6 +240,10 @@
       <ul>
         <li>HP公開＋インスタ発信開始</li>
         <li>求人</li>
+        <li><span class="star">★</span> 採用面接（7/24）</li>
+        <li>研修内容検討</li>
+        <li>パンフレット印刷</li>
+        <li>営業周りの分担</li>
         <li>紹介フロー設計を確定</li>
         <li><span class="star">★</span> 内覧会（9/1〜9/14）の案内を対象先に送付</li>
       </ul>
@@ -235,15 +251,16 @@
   </div>
 
   <div class="timeline-item">
-    <div class="t-time">8月（依頼あれば受け入れ開始？）</div>
+    <div class="t-time">8月</div>
     <div class="t-line"><div class="t-dot orange"></div><div class="t-tail"></div></div>
     <div class="t-card orange">
       <div class="card-header">
         <span class="card-title">👥 体制づくり・営業本格化</span>
       </div>
       <ul>
-        <li>松江りなこさん採用・稼働開始（徐々に）</li>
         <li>最小スタッフ体制の確保（6人採用目標）</li>
+        <li>内覧会の流れ・スケジュール確認</li>
+        <li>電話対応について確定</li>
         <li>営業リスト先へご挨拶・パンフレット持参</li>
         <li>営業先への訪問・関係構築を本格化</li>
         <li>環境整備・必要物品購入</li>
@@ -261,6 +278,7 @@
         <span class="badge badge-green">内覧会 9/1〜9/14</span>
       </div>
       <ul>
+        <li>松江りなこさん採用・稼働開始（徐々に）</li>
         <li><span class="star">★</span> 医療者向け内覧会本番（9/1〜9/14）</li>
         <li>最終マニュアル・記録フロー確定</li>
         <li>入居セット・必要物品の最終チェック</li>
@@ -285,31 +303,34 @@
 
 </div>
 
+</div>
+<div class="col-right">
+
 <!-- 月別チェックリスト -->
 <div class="section-label">やること（月別チェックリスト）</div>
 
 <div class="checklist">
   <div class="checklist-title">🔧 7月前半（〜7/19）</div>
   <div class="checklist-progress">HP完成まで</div>
-  <label class="check-item"><input type="checkbox" data-key="p1_1"><span>ホームページ完成（早川さん・えりさん担当）</span></label>
-  <label class="check-item"><input type="checkbox" data-key="p1_4"><span>パンフレット作成（さえさん）</span></label>
-  <label class="check-item"><input type="checkbox" data-key="p1_6"><span>営業リスト（対象先の洗い出し）作成（みき）</span></label>
-</div>
+  <label class="check-item"><input type="checkbox" data-key="p1_1"><span>ホームページ完成<a href="https://docs.google.com/spreadsheets/d/1S-VbxzH4R-fYNp0Thkz_SP0giRLumO13s6XnVjRh9T4/edit?usp=sharing" target="_blank" onclick="event.stopPropagation()">📋</a></span></label>
+  <label class="check-item"><input type="checkbox" data-key="p1_4"><span>パンフレット作成（さえさん）</span></label></div>
 
 <div class="checklist">
   <div class="checklist-title">📣 7月後半（7/19〜7/31）</div>
   <div class="checklist-progress">発信・求人開始</div>
   <label class="check-item"><input type="checkbox" data-key="p2_1"><span>HP公開に合わせてインスタで発信開始</span></label>
-  <label class="check-item"><input type="checkbox" data-key="p2_5"><span>求人</span></label>
+  <label class="check-item"><input type="checkbox" data-key="p2_8"><span>研修内容検討</span></label>
+  <label class="check-item"><input type="checkbox" data-key="p2_9"><span>パンフレット印刷</span></label>
+  <label class="check-item"><input type="checkbox" data-key="p2_10"><span>営業周りの分担</span></label>
   <label class="check-item"><input type="checkbox" data-key="p2_3"><span>紹介フロー設計を確定（誰から誰に、どう紹介が流れるか）</span></label>
   <label class="check-item"><input type="checkbox" data-key="p2_4"><span>内覧会（9/1〜9/14・医療者向け）の案内を対象先に送付</span></label>
 </div>
 
 <div class="checklist">
-  <div class="checklist-title">👥 8月（依頼あれば受け入れ開始？）</div>
+  <div class="checklist-title">👥 8月</div>
   <div class="checklist-progress">体制づくり・営業本格化</div>
-  <label class="check-item"><input type="checkbox" data-key="p3_1"><span>松江りなこさんの採用・稼働開始（徐々に）</span></label>
-  <label class="check-item"><input type="checkbox" data-key="p3_2"><span>最小スタッフ体制の確保（6人採用目標）・動き方の共有</span></label>
+  <label class="check-item"><input type="checkbox" data-key="p3_8"><span>内覧会の流れ・スケジュール確認</span></label>
+  <label class="check-item"><input type="checkbox" data-key="p3_7"><span>電話対応について確定</span></label>
   <label class="check-item"><input type="checkbox" data-key="p3_6"><span>営業リスト先へパンフレット持参でご挨拶・説明開始</span></label>
   <label class="check-item"><input type="checkbox" data-key="p3_3"><span>営業リスト対象先への訪問・関係構築を本格化</span></label>
   <label class="check-item"><input type="checkbox" data-key="p3_4"><span>環境整備・必要物品購入</span></label>
@@ -319,6 +340,7 @@
 <div class="checklist">
   <div class="checklist-title">🏠 9月</div>
   <div class="checklist-progress">内覧・最終調整｜内覧会：9/1（火）〜9/14（月）</div>
+  <label class="check-item"><input type="checkbox" data-key="p4_4"><span>松江りなこさんの採用・稼働開始（徐々に）</span></label>
   <label class="check-item"><input type="checkbox" data-key="p4_1"><span>医療者向け内覧会本番（9/1〜9/14）・利用イメージ提示</span></label>
   <label class="check-item"><input type="checkbox" data-key="p4_2"><span>初回受け入れに向けた最終マニュアル・記録フローの確定</span></label>
   <label class="check-item"><input type="checkbox" data-key="p4_3"><span>入居セット・必要物品・入居時アナムネの最終チェック</span></label>
@@ -330,6 +352,9 @@
   <label class="check-item"><input type="checkbox" data-key="p5_1"><span>初回受け入れ</span></label>
   <label class="check-item"><input type="checkbox" data-key="p5_2"><span>記録・振り返りの運用開始</span></label>
   <label class="check-item"><input type="checkbox" data-key="p5_3"><span>課題整理→マニュアル化</span></label>
+</div>
+
+</div>
 </div>
 
 <div class="footer">はじまりの家 そら｜10月オープンまでのフロー</div>
