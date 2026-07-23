@@ -1,0 +1,681 @@
+<title>「天国につながるホーム そら」採用面接シート</title>
+<style>
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+    background: #faf7f2;
+    color: #3a3a3a;
+    margin: 0;
+    padding: 32px 48px 120px;
+    line-height: 1.8;
+  }
+  h1 {
+    font-size: 24px;
+    border-bottom: 3px solid #d99a6c;
+    padding-bottom: 14px;
+    margin-bottom: 20px;
+  }
+  .header-fields {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+  .header-fields label {
+    font-size: 13px;
+    color: #7a5a3a;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .header-fields input {
+    font-size: 15px;
+    padding: 8px 10px;
+    border: 1px solid #d9c9b8;
+    border-radius: 6px;
+    background: #fff;
+    min-width: 160px;
+  }
+  .step {
+    background: #fff;
+    border: 2px solid #eddccb;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 28px;
+  }
+  .step h2 {
+    font-size: 19px;
+    margin: 0 0 14px;
+    color: #b5703c;
+  }
+  .step .time {
+    font-size: 13px;
+    color: #999;
+    font-weight: normal;
+  }
+  .content-block {
+    background: #f9f2ea;
+    border-left: 4px solid #d99a6c;
+    padding: 14px 18px;
+    margin-bottom: 14px;
+    font-size: 15px;
+    border-radius: 0 8px 8px 0;
+  }
+  .content-block ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  .content-block li {
+    margin-bottom: 6px;
+  }
+  .q-item {
+    margin-bottom: 18px;
+  }
+  .q-item .q-label {
+    font-size: 15px;
+    font-weight: bold;
+    color: #7a5a3a;
+    margin-bottom: 6px;
+  }
+  .q-item .q-text {
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: #444;
+  }
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 15px;
+    padding: 12px 14px;
+    border: 1px solid #d9c9b8;
+    border-radius: 8px;
+    resize: vertical;
+    background: #fffefc;
+  }
+  .note-small { min-height: 50px; }
+  .note-medium { min-height: 80px; }
+  .note-large { min-height: 130px; }
+  .checklist label {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 8px;
+    cursor: pointer;
+  }
+  .save-status {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    background: #eddccb;
+    color: #7a5a3a;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    opacity: 0.9;
+  }
+  .clear-btn {
+    background: none;
+    border: 1px solid #c99;
+    color: #a55;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .interviewer-checks {
+    display: flex;
+    gap: 14px;
+    padding-top: 6px;
+  }
+  .interviewer-checks label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 15px;
+    color: #3a3a3a;
+    cursor: pointer;
+  }
+  .interviewer-checks input[type="checkbox"] {
+    min-width: 0;
+    width: auto;
+  }
+  .candidate-switch {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .candidate-switch label {
+    font-size: 13px;
+    color: #7a5a3a;
+  }
+  .candidate-switch select {
+    font-size: 14px;
+    padding: 7px 10px;
+    border: 1px solid #d9c9b8;
+    border-radius: 6px;
+    background: #fff;
+    min-width: 180px;
+  }
+  .new-btn {
+    background: #eddccb;
+    border: 1px solid #d99a6c;
+    color: #7a5a3a;
+    padding: 7px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  .action-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .list-btn {
+    background: #fff;
+    border: 1px solid #d99a6c;
+    color: #b5703c;
+    padding: 7px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  #listView {
+    background: #fff;
+    border: 2px solid #eddccb;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 28px;
+  }
+  #listView table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  #listView th {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 2px solid #d99a6c;
+    color: #7a5a3a;
+  }
+  #listView td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e8ddd0;
+    vertical-align: top;
+  }
+  #listView td.summary-cell {
+    color: #666;
+    max-width: 260px;
+  }
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+  }
+  .badge-saiyou { background: #e3f0e3; color: #3a7a3a; }
+  .badge-fusaiyou { background: #f0e3e3; color: #a55; }
+  .badge-none { background: #eee; color: #999; }
+  .open-link {
+    color: #b5703c;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 13px;
+  }
+  .empty-msg { color: #999; font-size: 14px; }
+</style>
+
+<h1>「天国につながるホーム そら」採用面接シート</h1>
+
+<div class="candidate-switch">
+  <label>保存済みの面接</label>
+  <select id="candidateSelect"></select>
+  <button class="new-btn" id="newCandidateBtn">＋ 新規面接</button>
+  <button class="list-btn" id="listToggleBtn">📋 一覧で見る</button>
+</div>
+
+<div id="listView" style="display:none;">
+  <h2 style="color:#b5703c;font-size:19px;margin-top:0;">面接一覧</h2>
+  <div id="listViewBody"></div>
+</div>
+
+<div id="formView">
+
+<div class="header-fields">
+  <div><label>候補者名</label><input type="text" id="f_name" placeholder="お名前"></div>
+  <div><label>職種</label><input type="text" id="f_role" placeholder="看護師 など"></div>
+  <div><label>日時</label><input type="text" id="f_date" placeholder="2026-07-16"></div>
+  <div>
+    <label>面接者</label>
+    <div class="interviewer-checks">
+      <label><input type="checkbox" data-key="int_tomizawa"> 富澤</label>
+      <label><input type="checkbox" data-key="int_cabral"> カブラル</label>
+      <label><input type="checkbox" data-key="int_taniai"> 谷合</label>
+    </div>
+  </div>
+</div>
+
+<div class="action-row">
+  <button class="new-btn" id="sendBtn">📤 Googleドキュメントに送信</button>
+  <button class="clear-btn" id="clearBtn">この候補者のメモを削除</button>
+  <span id="sendStatus" style="font-size:13px;color:#7a5a3a;align-self:center;"></span>
+</div>
+
+<div class="step">
+  <h2>1. アイスブレイク・自己紹介 <span class="time">（5分）</span></h2>
+  <textarea class="note-small" data-key="step1" placeholder="メモ（雰囲気・第一印象など）"></textarea>
+</div>
+
+<div class="step">
+  <h2>2. 基本質問（履歴書ベース） <span class="time">（7分）</span></h2>
+
+  <div class="q-item">
+    <div class="q-text">履歴書・自己PRを見て気になった点の深掘り（経歴・ブランクなど）</div>
+    <textarea class="note-medium" data-key="step2_1" placeholder="メモ"></textarea>
+  </div>
+  <div class="q-item">
+    <div class="q-text">看護師になろうと思った理由</div>
+    <textarea class="note-medium" data-key="step2_2" placeholder="メモ"></textarea>
+  </div>
+  <div class="q-item">
+    <div class="q-text">希望する勤務形態（常勤/非常勤・日数・シフト等）</div>
+    <textarea class="note-medium" data-key="step2_3" placeholder="メモ"></textarea>
+  </div>
+  <div class="q-item">
+    <div class="q-text">これまでの看取り・終末期ケアの経験</div>
+    <textarea class="note-medium" data-key="step2_4" placeholder="メモ"></textarea>
+  </div>
+  <div class="q-item">
+    <div class="q-text">通勤手段の確認（車の運転ができるか）</div>
+    <textarea class="note-medium" data-key="step2_5" placeholder="メモ"></textarea>
+  </div>
+  <div class="q-item">
+    <div class="q-text">今困っていること</div>
+    <textarea class="note-medium" data-key="step2_6" placeholder="メモ"></textarea>
+  </div>
+</div>
+
+<div class="step">
+  <h2>3. 看護観・自分について <span class="time">（18分）</span></h2>
+
+  <div class="q-item">
+    <div class="q-text">何を目的に「そら」に入ろうと思いましたか？</div>
+    <textarea class="note-medium" data-key="step3_1" placeholder="メモ"></textarea>
+  </div>
+  <div class="q-item">
+    <div class="q-text">目指す看護</div>
+    <textarea class="note-medium" data-key="step3_6" placeholder="メモ"></textarea>
+  </div>
+  <div class="q-item">
+    <div class="q-text">ここで、あなたが貢献できることは何だと思いますか？</div>
+    <textarea class="note-medium" data-key="step3_2" placeholder="メモ"></textarea>
+  </div>
+  <div class="q-item">
+    <div class="q-text">大事にしている言葉</div>
+    <textarea class="note-medium" data-key="step3_7" placeholder="メモ"></textarea>
+  </div>
+  <div class="q-item">
+    <div class="q-text">この仕事を通じて、あなたは世の中に何ができると思いますか？</div>
+    <textarea class="note-medium" data-key="step3_5" placeholder="メモ"></textarea>
+  </div>
+  <div class="q-item">
+    <div class="q-text">3年後どうなっていたいか</div>
+    <textarea class="note-medium" data-key="step3_8" placeholder="メモ"></textarea>
+  </div>
+</div>
+
+<div class="step">
+  <h2>4. 候補者からの質問タイム <span class="time">（5分）</span></h2>
+  <textarea class="note-medium" data-key="step5" placeholder="候補者からの質問と回答内容をメモ"></textarea>
+</div>
+
+<div class="step">
+  <h2>5. 労働条件・今後の流れ <span class="time">（5分）</span></h2>
+  <div class="content-block">
+    <p>詳細な給与・勤務条件はこちら：<br>
+    <a href="https://sora-web-jmry13733177s-projects.vercel.app/kyuyo.html" target="_blank">給与・勤務条件まとめ ↗</a></p>
+  </div>
+  <div class="checklist">
+    <label><input type="checkbox" data-key="c1"> 給与・勤務条件の説明</label>
+    <label><input type="checkbox" data-key="c2"> 選考結果の連絡時期の説明　【要検討】</label>
+  </div>
+  <textarea class="note-medium" data-key="step6" placeholder="伝えた内容・候補者の反応など"></textarea>
+</div>
+
+<div class="step">
+  <h2>6. 施設案内 <span class="time">（10分）</span></h2>
+  <div class="content-block">
+    <ul>
+      <li>館内・お部屋・共用スペースの案内</li>
+      <li>実際の雰囲気を見てもらう</li>
+    </ul>
+  </div>
+  <textarea class="note-medium" data-key="step7" placeholder="案内した内容・候補者の反応など"></textarea>
+</div>
+
+<div class="step">
+  <h2>総合所見</h2>
+  <textarea class="note-large" data-key="summary" placeholder="全体を通しての印象・評価・判断メモ"></textarea>
+</div>
+
+<div class="step">
+  <h2>選考結果</h2>
+  <div class="checklist">
+    <label><input type="checkbox" data-key="kekka_saiyou" id="kekka_saiyou"> 採用</label>
+    <label><input type="checkbox" data-key="kekka_fusaiyou" id="kekka_fusaiyou"> 不採用</label>
+  </div>
+</div>
+
+</div>
+
+<div class="save-status" id="saveStatus">読み込み中...</div>
+
+<script>
+(function() {
+  const STORAGE_KEY = 'sora_mensetsu_multi_v1';
+  const DRAFT_KEY = '__draft__';
+
+  const nameInput = document.getElementById('f_name');
+  const otherFieldIds = ['f_role', 'f_date'];
+  const select = document.getElementById('candidateSelect');
+  const status = document.getElementById('saveStatus');
+
+  function loadStore() {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+      return { candidates: parsed.candidates || {}, lastActive: parsed.lastActive || '' };
+    } catch (e) {
+      return { candidates: {}, lastActive: '' };
+    }
+  }
+
+  function saveStore() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(store));
+    const now = new Date();
+    const t = now.getHours().toString().padStart(2,'0') + ':' + now.getMinutes().toString().padStart(2,'0') + ':' + now.getSeconds().toString().padStart(2,'0');
+    status.textContent = '保存済み ' + t;
+  }
+
+  function collectForm() {
+    const rec = {};
+    otherFieldIds.forEach(id => rec[id] = document.getElementById(id).value);
+    document.querySelectorAll('textarea[data-key]').forEach(el => rec[el.getAttribute('data-key')] = el.value);
+    document.querySelectorAll('input[type="checkbox"][data-key]').forEach(el => rec[el.getAttribute('data-key')] = el.checked);
+    return rec;
+  }
+
+  function applyForm(rec) {
+    rec = rec || {};
+    otherFieldIds.forEach(id => document.getElementById(id).value = rec[id] || '');
+    document.querySelectorAll('textarea[data-key]').forEach(el => el.value = rec[el.getAttribute('data-key')] || '');
+    document.querySelectorAll('input[type="checkbox"][data-key]').forEach(el => el.checked = !!rec[el.getAttribute('data-key')]);
+  }
+
+  function refreshSelect() {
+    const names = Object.keys(store.candidates).filter(n => n !== DRAFT_KEY);
+    select.innerHTML = '';
+    const optNew = document.createElement('option');
+    optNew.value = '';
+    optNew.textContent = '（新規面接）';
+    select.appendChild(optNew);
+    names.forEach(n => {
+      const opt = document.createElement('option');
+      opt.value = n;
+      opt.textContent = n;
+      select.appendChild(opt);
+    });
+    select.value = (activeKey && store.candidates[activeKey]) ? activeKey : '';
+  }
+
+  function persistCurrent() {
+    const rec = collectForm();
+    const key = activeKey || DRAFT_KEY;
+    store.candidates[key] = rec;
+    store.lastActive = key;
+    saveStore();
+  }
+
+  let store = loadStore();
+  let activeKey = store.lastActive && store.lastActive !== DRAFT_KEY ? store.lastActive : '';
+
+  // 初期ロード
+  if (activeKey && store.candidates[activeKey]) {
+    nameInput.value = activeKey;
+    applyForm(store.candidates[activeKey]);
+  } else if (store.candidates[DRAFT_KEY]) {
+    nameInput.value = '';
+    applyForm(store.candidates[DRAFT_KEY]);
+  }
+  refreshSelect();
+  status.textContent = '自動保存 待機中';
+
+  // 候補者名：blur時にキーを確定・リネーム
+  nameInput.addEventListener('blur', () => {
+    const newKey = nameInput.value.trim();
+    if (!newKey || newKey === activeKey) return;
+    const rec = collectForm();
+    if (activeKey && store.candidates[activeKey]) delete store.candidates[activeKey];
+    if (store.candidates[DRAFT_KEY]) delete store.candidates[DRAFT_KEY];
+    store.candidates[newKey] = rec;
+    activeKey = newKey;
+    store.lastActive = activeKey;
+    saveStore();
+    refreshSelect();
+  });
+
+  // その他フィールド・テキストエリア・チェックボックス：変更のたびに現在のキーへ保存
+  const watchedEls = [
+    ...otherFieldIds.map(id => document.getElementById(id)),
+    ...document.querySelectorAll('textarea[data-key]'),
+    ...document.querySelectorAll('input[type="checkbox"][data-key]')
+  ];
+  watchedEls.forEach(el => {
+    const evt = (el.type === 'checkbox') ? 'change' : 'input';
+    el.addEventListener(evt, persistCurrent);
+  });
+
+  // 選考結果：採用／不採用は排他選択
+  const saiyouEl = document.getElementById('kekka_saiyou');
+  const fusaiyouEl = document.getElementById('kekka_fusaiyou');
+  saiyouEl.addEventListener('change', () => { if (saiyouEl.checked) fusaiyouEl.checked = false; });
+  fusaiyouEl.addEventListener('change', () => { if (fusaiyouEl.checked) saiyouEl.checked = false; });
+
+  // 候補者切り替えセレクト
+  select.addEventListener('change', () => {
+    persistCurrent();
+    const key = select.value;
+    activeKey = key;
+    nameInput.value = key;
+    applyForm(store.candidates[key]);
+    store.lastActive = key || DRAFT_KEY;
+    saveStore();
+    refreshSelect();
+  });
+
+  // 新規面接ボタン
+  document.getElementById('newCandidateBtn').addEventListener('click', () => {
+    persistCurrent();
+    if (store.candidates[DRAFT_KEY]) delete store.candidates[DRAFT_KEY];
+    activeKey = '';
+    nameInput.value = '';
+    applyForm({});
+    store.lastActive = DRAFT_KEY;
+    saveStore();
+    refreshSelect();
+    nameInput.focus();
+  });
+
+  // 現在の候補者のメモを削除
+  document.getElementById('clearBtn').addEventListener('click', () => {
+    const label = activeKey || nameInput.value.trim() || '（未保存の下書き）';
+    if (!confirm(`「${label}」の入力内容を削除します。よろしいですか？`)) return;
+    if (activeKey && store.candidates[activeKey]) delete store.candidates[activeKey];
+    if (store.candidates[DRAFT_KEY]) delete store.candidates[DRAFT_KEY];
+    activeKey = '';
+    nameInput.value = '';
+    applyForm({});
+    store.lastActive = '';
+    saveStore();
+    refreshSelect();
+  });
+
+  // 一覧表示
+  const listView = document.getElementById('listView');
+  const listViewBody = document.getElementById('listViewBody');
+  const formView = document.getElementById('formView');
+  const listToggleBtn = document.getElementById('listToggleBtn');
+
+  function escapeHtml(s) {
+    return (s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  function renderListView() {
+    const names = Object.keys(store.candidates).filter(n => n !== DRAFT_KEY);
+    if (names.length === 0) {
+      listViewBody.innerHTML = '<p class="empty-msg">まだ保存された面接記録がありません。</p>';
+      return;
+    }
+    let html = '<table><tr><th>候補者名</th><th>職種</th><th>日時</th><th>選考結果</th><th>総合所見</th><th></th></tr>';
+    names.forEach(n => {
+      const rec = store.candidates[n] || {};
+      let badge = '<span class="badge badge-none">未定</span>';
+      if (rec.kekka_saiyou) badge = '<span class="badge badge-saiyou">採用</span>';
+      else if (rec.kekka_fusaiyou) badge = '<span class="badge badge-fusaiyou">不採用</span>';
+      const summarySnippet = escapeHtml((rec.summary || '').slice(0, 40)) + ((rec.summary || '').length > 40 ? '…' : '');
+      html += `<tr>
+        <td>${escapeHtml(n)}</td>
+        <td>${escapeHtml(rec.f_role)}</td>
+        <td>${escapeHtml(rec.f_date)}</td>
+        <td>${badge}</td>
+        <td class="summary-cell">${summarySnippet}</td>
+        <td><span class="open-link" data-open="${escapeHtml(n)}">開く</span></td>
+      </tr>`;
+    });
+    html += '</table>';
+    listViewBody.innerHTML = html;
+
+    listViewBody.querySelectorAll('.open-link').forEach(el => {
+      el.addEventListener('click', () => {
+        const key = el.getAttribute('data-open');
+        activeKey = key;
+        nameInput.value = key;
+        applyForm(store.candidates[key]);
+        store.lastActive = key;
+        saveStore();
+        refreshSelect();
+        listView.style.display = 'none';
+        formView.style.display = 'block';
+      });
+    });
+  }
+
+  listToggleBtn.addEventListener('click', () => {
+    const showingList = listView.style.display !== 'none';
+    if (showingList) {
+      listView.style.display = 'none';
+      formView.style.display = 'block';
+    } else {
+      persistCurrent();
+      renderListView();
+      listView.style.display = 'block';
+      formView.style.display = 'none';
+    }
+  });
+
+  // Googleドキュメントへの送信
+  const WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbzCvA0g0GzNStriDetCdf9xHHhsjCN7sgHk-0qdtpwMOalwr8Q6MOJm6g3LaHipAuKY/exec';
+
+  function buildInterviewerLine(rec) {
+    const names = [];
+    if (rec.int_tomizawa) names.push('富澤');
+    if (rec.int_cabral) names.push('カブラル');
+    if (rec.int_taniai) names.push('谷合');
+    return names.length ? names.join('・') : '（未選択）';
+  }
+
+  function buildKekkaLine(rec) {
+    if (rec.kekka_saiyou) return '採用';
+    if (rec.kekka_fusaiyou) return '不採用';
+    return '未定';
+  }
+
+  function formatRecordText(rec) {
+    const lines = [];
+    lines.push('職種：' + (rec.f_role || '') + '　日時：' + (rec.f_date || ''));
+    lines.push('面接者：' + buildInterviewerLine(rec));
+    lines.push('');
+    lines.push('【1. アイスブレイク・自己紹介】');
+    lines.push(rec.step1 || '（メモなし）');
+    lines.push('');
+    lines.push('【2. 基本質問】');
+    lines.push('Q. 履歴書・自己PRを見て気になった点の深掘り（経歴・ブランクなど）');
+    lines.push(rec.step2_1 || '（メモなし）');
+    lines.push('Q. 看護師になろうと思った理由');
+    lines.push(rec.step2_2 || '（メモなし）');
+    lines.push('Q. 希望する勤務形態（常勤/非常勤・日数・シフト等）');
+    lines.push(rec.step2_3 || '（メモなし）');
+    lines.push('Q. これまでの看取り・終末期ケアの経験');
+    lines.push(rec.step2_4 || '（メモなし）');
+    lines.push('Q. 通勤手段の確認（車の運転ができるか）');
+    lines.push(rec.step2_5 || '（メモなし）');
+    lines.push('Q. 今困っていること');
+    lines.push(rec.step2_6 || '（メモなし）');
+    lines.push('');
+    lines.push('【3. 看護観・自分について】');
+    lines.push('Q. 何を目的に「そら」に入ろうと思いましたか？');
+    lines.push(rec.step3_1 || '（メモなし）');
+    lines.push('Q. 目指す看護');
+    lines.push(rec.step3_6 || '（メモなし）');
+    lines.push('Q. ここで、あなたが貢献できることは何だと思いますか？');
+    lines.push(rec.step3_2 || '（メモなし）');
+    lines.push('Q. 大事にしている言葉');
+    lines.push(rec.step3_7 || '（メモなし）');
+    lines.push('Q. この仕事を通じて、あなたは世の中に何ができると思いますか？');
+    lines.push(rec.step3_5 || '（メモなし）');
+    lines.push('Q. 3年後どうなっていたいか');
+    lines.push(rec.step3_8 || '（メモなし）');
+    lines.push('');
+    lines.push('【4. 候補者からの質問タイム】');
+    lines.push(rec.step5 || '（メモなし）');
+    lines.push('');
+    lines.push('【5. 労働条件・今後の流れ】');
+    lines.push('給与・勤務条件の説明：' + (rec.c1 ? '済み' : '未実施'));
+    lines.push('選考結果の連絡時期の説明：' + (rec.c2 ? '済み' : '未実施'));
+    lines.push(rec.step6 || '（メモなし）');
+    lines.push('');
+    lines.push('【6. 施設案内】');
+    lines.push(rec.step7 || '（メモなし）');
+    lines.push('');
+    lines.push('【総合所見】');
+    lines.push(rec.summary || '（メモなし）');
+    lines.push('');
+    lines.push('【選考結果】' + buildKekkaLine(rec));
+    return lines.join('\n');
+  }
+
+  const sendBtn = document.getElementById('sendBtn');
+  const sendStatusEl = document.getElementById('sendStatus');
+
+  sendBtn.addEventListener('click', () => {
+    const candidateName = nameInput.value.trim();
+    if (!candidateName) {
+      alert('候補者名を入力してください');
+      return;
+    }
+    persistCurrent();
+    const rec = collectForm();
+    const text = formatRecordText(rec);
+
+    sendStatusEl.textContent = '送信中...';
+    fetch(WEBAPP_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify({ name: candidateName, text: text })
+    }).then(() => {
+      sendStatusEl.textContent = '送信しました（反映まで数秒かかります）';
+    }).catch(() => {
+      sendStatusEl.textContent = '送信に失敗しました。ネット接続を確認してください';
+    });
+  });
+})();
+</script>
