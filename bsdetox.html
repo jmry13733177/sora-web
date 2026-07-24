@@ -34,6 +34,69 @@
     margin-top: 14px;
     font-family: -apple-system, "Hiragino Kaku Gothic ProN", sans-serif;
   }
+  .kosha-section {
+    padding: 32px 20px 8px;
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+  }
+  .kosha-section h2 {
+    text-align: center;
+    font-size: 22px;
+    color: #6B2E3A;
+    margin-bottom: 28px;
+    letter-spacing: 0.02em;
+  }
+  .kosha-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px 12px;
+  }
+  .kosha-item { text-align: center; }
+  .kosha-circle {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #6B2E3A;
+    line-height: 1.4;
+  }
+  .kosha-item p {
+    font-size: 11px;
+    color: #8A5A64;
+    line-height: 1.6;
+  }
+  .kosha-item .label {
+    color: #A8886B;
+    margin: 4px 0 2px;
+  }
+  .feature-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 0 20px 28px;
+  }
+  .feature-item img {
+    width: 42%;
+    max-width: 200px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+  .feature-item .text h3 {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 19px;
+    color: #6B2E3A;
+    margin-bottom: 10px;
+  }
+  .feature-item .text p {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 14px;
+    color: #6B4A32;
+    line-height: 1.8;
+  }
 </style>
 </head>
 <body>
@@ -42,13 +105,67 @@
   <img src="bsdetox-assets/slice-01.jpg" alt="">
   <img src="bsdetox-assets/slice-02.jpg" alt="">
   <img src="bsdetox-assets/slice-03.jpg" alt="">
-  <img src="bsdetox-assets/slice-04.jpg" alt="">
-  <img src="bsdetox-assets/slice-05.jpg" alt="">
-  <img src="bsdetox-assets/slice-06.jpg" alt="">
-  <img src="bsdetox-assets/slice-07.jpg" alt="">
+
+  <div class="kosha-section">
+    <h2>6つの身体（コーシャ）とストレス</h2>
+    <div class="kosha-grid">
+      <div class="kosha-item">
+        <div class="kosha-circle" style="background: radial-gradient(circle, #E0A868 0%, #F3D9B8 60%, rgba(255,255,255,0) 100%);">肉体<br>アンナマヤコーシャ</div>
+        <div class="label">＜ストレスがもたらすもの＞</div>
+        <p>身体の不調、病気、早すぎる老化<br>無気力、注意力の欠如</p>
+        <div class="label">＜デトックスの効果＞</div>
+        <p>安らぎ、健康、活力、細胞レベルでの若返り</p>
+      </div>
+      <div class="kosha-item">
+        <div class="kosha-circle" style="background: radial-gradient(circle, #F0C060 0%, #F8E4B0 60%, rgba(255,255,255,0) 100%);">エネルギー体<br>プラーナマヤコーシャ</div>
+        <div class="label">＜ストレスがもたらすもの＞</div>
+        <p>詰まったエネルギー、創造的表現の喪失、先の見えない停滞感</p>
+        <div class="label">＜デトックスの効果＞</div>
+        <p>ブレイクスルーと新たな扉が人生に現れる</p>
+      </div>
+      <div class="kosha-item">
+        <div class="kosha-circle" style="background: radial-gradient(circle, #8E86D8 0%, #C7C2EC 60%, rgba(255,255,255,0) 100%);">マインド体<br>マノーマヤコーシャ</div>
+        <div class="label">＜ストレスがもたらすもの＞</div>
+        <p>未解決の感情、過去の傷に囚われる、トラウマや恐れ</p>
+        <div class="label">＜デトックスの効果＞</div>
+        <p>両親との関係性が癒される、人生が開かれていく</p>
+      </div>
+      <div class="kosha-item">
+        <div class="kosha-circle" style="background: radial-gradient(circle, #6E93D6 0%, #B9CDEE 60%, rgba(255,255,255,0) 100%);">カルマ体<br>カルママヤコーシャ</div>
+        <div class="label">＜ストレスがもたらすもの＞</div>
+        <p>ネガティブなカルマの蓄積<br>人生が重く感じる</p>
+        <div class="label">＜デトックスの効果＞</div>
+        <p>ネガティブなカルマからの解放、新たな機会を引き寄せる</p>
+      </div>
+      <div class="kosha-item">
+        <div class="kosha-circle" style="background: radial-gradient(circle, #E0A868 0%, #F3D9B8 60%, rgba(255,255,255,0) 100%);">智慧体<br>ヴィグニャーナマヤコーシャ</div>
+        <div class="label">＜ストレスがもたらすもの＞</div>
+        <p>無知、無意識の行動。<br>人生に制限を感じる</p>
+        <div class="label">＜デトックスの効果＞</div>
+        <p>シンクロニシティや奇跡が流れてくる</p>
+      </div>
+      <div class="kosha-item">
+        <div class="kosha-circle" style="background: radial-gradient(circle, #6E93D6 0%, #B9CDEE 60%, rgba(255,255,255,0) 100%);">至福体<br>アーナンダマヤコーシャ</div>
+        <div class="label">＜ストレスがもたらすもの＞</div>
+        <p>人生が無味乾燥、喜びがすぐに薄れてしまう</p>
+        <div class="label">＜デトックスの効果＞</div>
+        <p>あらゆる体験、人生が喜びに満ちたものになる</p>
+      </div>
+    </div>
+  </div>
+
   <img src="bsdetox-assets/slice-08.jpg" alt="">
   <img src="bsdetox-assets/slice-09.jpg" alt="">
   <img src="bsdetox-assets/slice-10.jpg" alt="">
+
+  <div class="feature-item">
+    <img src="bsdetox-assets/laptop-photo.jpg" alt="">
+    <div class="text">
+      <h3>4．フォローアップ</h3>
+      <p>講座でストレスをデトックスした後、日常に戻ってからがあなたの人生を変えていく本番です！3ヶ月間のフォローアップをオンラインで行います。美しい状態を習慣にしていきましょう。</p>
+    </div>
+  </div>
+
   <img src="bsdetox-assets/slice-11.jpg" alt="">
   <img src="bsdetox-assets/slice-12.jpg" alt="">
   <img src="bsdetox-assets/slice-13.jpg" alt="">
