@@ -64,6 +64,7 @@
     color: #6B2E3A;
     line-height: 1.4;
     overflow: visible;
+    white-space: nowrap;
   }
   .kosha-item p {
     font-size: 11px;
@@ -121,7 +122,23 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 0 14px;
   }
+  .testimonial-item {
+    position: relative;
+    padding: 10px 8px;
+  }
+  .testimonial-item::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140%;
+    height: 130%;
+    background: radial-gradient(circle, #F8DFA0 0%, #FCEFC8 45%, rgba(255,255,255,0) 75%);
+    z-index: -1;
+  }
   .testimonial-grid p {
+    position: relative;
     font-size: 12.5px;
     color: #6B2E4A;
     line-height: 1.65;
@@ -222,9 +239,9 @@
   <div class="testimonial-section">
     <h2>講座受講者の体験談</h2>
     <div class="testimonial-grid">
-      <p>この講座を受けてから、ストレスは感じますが、溜まりにくくなりました！人の目が気にならなくなり、職場で苦手だった上司とも関係が改善しました。</p>
-      <p>親に対する怒りと諦めの感情があることに、はじめて気がつきました。ずっとしまっていた気持ちを穏やかに観察ができ、涙が止まりませんでした。</p>
-      <p>家族が病気になり、医療費も高額で心が落ち着かない毎日でしたが呼吸法を続けました。すると焦りが消え、医療費と同額の臨時収入が入ってきました。</p>
+      <div class="testimonial-item"><p>この講座を受けてから、ストレスは感じますが、溜まりにくくなりました！人の目が気にならなくなり、職場で苦手だった上司とも関係が改善しました。</p></div>
+      <div class="testimonial-item"><p>親に対する怒りと諦めの感情があることに、はじめて気がつきました。ずっとしまっていた気持ちを穏やかに観察ができ、涙が止まりませんでした。</p></div>
+      <div class="testimonial-item"><p>家族が病気になり、医療費も高額で心が落ち着かない毎日でしたが呼吸法を続けました。すると焦りが消え、医療費と同額の臨時収入が入ってきました。</p></div>
     </div>
   </div>
 
