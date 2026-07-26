@@ -6,9 +6,15 @@
 <title>ビューティフルステート Basic ストレスデトックス</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: #ffffff; overflow-x: hidden; }
+  body {
+    background: #ffffff;
+    overflow-x: hidden;
+    font-family: -apple-system, "Hiragino Kaku Gothic ProN", sans-serif;
+    color: #6B4A32;
+  }
   .wrap { max-width: 480px; margin: 0 auto; }
   .wrap img { display: block; width: 100%; height: auto; }
+
   .cta-area {
     text-align: center;
     padding: 28px 20px 40px;
@@ -26,13 +32,218 @@
     border-radius: 40px;
     text-decoration: none;
     box-shadow: 0 6px 18px rgba(107,74,50,0.25);
-    font-family: -apple-system, "Hiragino Kaku Gothic ProN", sans-serif;
   }
   .cta-note {
     font-size: 12px;
     color: #A8886B;
     margin-top: 14px;
-    font-family: -apple-system, "Hiragino Kaku Gothic ProN", sans-serif;
+  }
+
+  section { padding: 36px 20px; }
+
+  .checklist-section h2 {
+    font-size: 19px;
+    color: #6B2E3A;
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .checklist-item {
+    display: flex;
+    gap: 8px;
+    font-size: 14.5px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+    color: #6B2E3A;
+  }
+  .checklist-item .mark { flex-shrink: 0; }
+
+  .kosha-intro { text-align: center; padding-bottom: 12px; }
+  .kosha-intro h2 {
+    font-size: 19px;
+    color: #6B2E3A;
+    margin-bottom: 18px;
+    line-height: 1.5;
+  }
+  .kosha-intro p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 6px;
+  }
+
+  .kosha-section { padding-top: 12px; }
+  .kosha-section h2 {
+    text-align: center;
+    font-size: 20px;
+    color: #6B2E3A;
+    margin-bottom: 28px;
+    letter-spacing: 0.02em;
+  }
+  .kosha-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .kosha-item { text-align: center; min-width: 0; }
+  .kosha-circle {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #6B2E3A;
+    line-height: 1.5;
+  }
+  .kosha-item .label {
+    font-size: 13px;
+    color: #A8886B;
+    margin: 10px 0 2px;
+  }
+  .kosha-item p {
+    font-size: 13.5px;
+    color: #8A5A64;
+    line-height: 1.7;
+  }
+
+  .feature-section h2 {
+    text-align: center;
+    font-size: 20px;
+    color: #6B2E3A;
+    margin-bottom: 24px;
+  }
+  .feature-item { margin-bottom: 30px; }
+  .feature-item img {
+    border-radius: 6px;
+    margin-bottom: 12px;
+  }
+  .feature-item h3 {
+    font-size: 16px;
+    color: #6B2E3A;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .feature-item p {
+    font-size: 13.5px;
+    line-height: 1.8;
+    color: #6B4A32;
+  }
+
+  .staff-section h2 {
+    text-align: center;
+    font-size: 20px;
+    color: #6B2E3A;
+  }
+  .staff-section .sub {
+    text-align: center;
+    font-size: 13px;
+    color: #A8886B;
+    margin-bottom: 26px;
+  }
+  .staff-item { display: flex; gap: 14px; margin-bottom: 28px; }
+  .staff-item .photo {
+    width: 88px;
+    flex-shrink: 0;
+  }
+  .staff-item .photo img {
+    border-radius: 44px 44px 6px 6px;
+  }
+  .staff-item .name {
+    font-size: 13px;
+    font-weight: bold;
+    color: #C4622D;
+    text-align: center;
+    margin-top: 6px;
+  }
+  .staff-item .bio { min-width: 0; }
+  .staff-item .bio p {
+    font-size: 11.5px;
+    line-height: 1.7;
+    color: #6B4A32;
+    margin-bottom: 6px;
+  }
+
+  .testimonial-section h2 {
+    text-align: center;
+    font-size: 20px;
+    color: #6B2E3A;
+    margin-bottom: 24px;
+  }
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 12px;
+  }
+  .testimonial-item {
+    position: relative;
+    padding: 10px 6px;
+  }
+  .testimonial-item::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140%;
+    height: 130%;
+    background: radial-gradient(circle, #F8DFA0 0%, #FCEFC8 45%, rgba(255,255,255,0) 75%);
+    z-index: -1;
+  }
+  .testimonial-grid p {
+    position: relative;
+    font-size: 11.5px;
+    color: #6B2E4A;
+    line-height: 1.6;
+  }
+
+  .closing-message {
+    text-align: center;
+    padding-bottom: 16px;
+  }
+  .closing-message p {
+    font-size: 16px;
+    color: #6B2E3A;
+    line-height: 1.9;
+  }
+
+  .overview-section h2 {
+    text-align: center;
+    font-size: 19px;
+    color: #6B2E3A;
+    text-decoration: underline;
+    margin-bottom: 20px;
+  }
+  .overview-section .course-name {
+    text-align: center;
+    font-size: 14px;
+    color: #6B2E3A;
+    line-height: 1.7;
+    margin-bottom: 22px;
+  }
+  .overview-row { margin-bottom: 18px; }
+  .overview-row .label {
+    font-size: 13px;
+    color: #6B2E3A;
+    text-decoration: underline;
+    margin-bottom: 4px;
+  }
+  .overview-row .value {
+    font-size: 14.5px;
+    color: #6B4A32;
+    line-height: 1.6;
+  }
+  .overview-row .strike {
+    color: #B39A8C;
+    text-decoration: line-through;
+    font-size: 13.5px;
+  }
+  .overview-row .price {
+    color: #C4285A;
+    font-weight: bold;
+    font-size: 16px;
   }
 </style>
 </head>
@@ -45,7 +256,165 @@
     <div class="cta-note" id="cta-note-top">お申し込みには公式LINEの友だち登録が必要です</div>
   </div>
 
-  <img src="bsdetox-assets/bsb-body.jpg" alt="">
+  <section class="checklist-section">
+    <h2>ストレスのない美しい状態から生きる自分に変わることで、こんな毎日を手に入れませんか？</h2>
+    <div class="checklist-item"><span class="mark">✅</span><span>「焦り」「不安」「恐れ」から解放され、仕事で圧倒的な成果を出せる</span></div>
+    <div class="checklist-item"><span class="mark">✅</span><span>揺るがない穏やかさがあり、どんなことが起きても明晰な判断・決断ができる</span></div>
+    <div class="checklist-item"><span class="mark">✅</span><span>シンクロニシティや奇跡のような出来事が日常的に起こり、願いがスムーズに叶う</span></div>
+    <div class="checklist-item"><span class="mark">✅</span><span>人間関係の悩みが消え、家庭も仕事も充実している</span></div>
+  </section>
+
+  <section class="kosha-intro">
+    <h2>６つの身体（コーシャ）の<br>ストレスがデトックスされます</h2>
+    <p>古代からの教えによれば、私たちはひとつの身体ではなく、６つの身体を持っています。</p>
+    <p>ストレスは、この６つの身体に蓄積します。</p>
+    <p>この講座では、６つの技法を通じて、それぞれをデトックスしていきます。</p>
+  </section>
+
+  <section class="kosha-section">
+    <h2>６つの身体（コーシャ）とストレス</h2>
+    <div class="kosha-grid">
+      <div class="kosha-item">
+        <div class="kosha-circle" style="background: radial-gradient(circle, #CC6934 0%, #EAB98F 60%, rgba(255,255,255,0) 100%);">肉体<br>アンナマヤコーシャ</div>
+        <div class="label">＜ストレスがもたらすもの＞</div>
+        <p>身体の不調、病気、早すぎる老化<br>無気力、注意力の欠如</p>
+        <div class="label">＜デトックスの効果＞</div>
+        <p>安らぎ、健康、活力、<br>細胞レベルでの若返り</p>
+      </div>
+      <div class="kosha-item">
+        <div class="kosha-circle" style="background: radial-gradient(circle, #F5C06A 0%, #FADFAE 60%, rgba(255,255,255,0) 100%);">エネルギー体<br>プラーナマヤコーシャ</div>
+        <div class="label">＜ストレスがもたらすもの＞</div>
+        <p>詰まったエネルギー、創造的表現の<br>喪失、先の見えない停滞感</p>
+        <div class="label">＜デトックスの効果＞</div>
+        <p>ブレイクスルーと<br>新たな扉が人生に現れる</p>
+      </div>
+      <div class="kosha-item">
+        <div class="kosha-circle" style="background: radial-gradient(circle, #7060E0 0%, #B3ABEE 60%, rgba(255,255,255,0) 100%);">マインド体<br>マノーマヤコーシャ</div>
+        <div class="label">＜ストレスがもたらすもの＞</div>
+        <p>未解決の感情、過去の傷に<br>囚われる、トラウマや恐れ</p>
+        <div class="label">＜デトックスの効果＞</div>
+        <p>両親との関係性が癒される、<br>人生が開かれていく</p>
+      </div>
+      <div class="kosha-item">
+        <div class="kosha-circle" style="background: radial-gradient(circle, #3267CF 0%, #9BB6E8 60%, rgba(255,255,255,0) 100%);">カルマ体<br>カルママヤコーシャ</div>
+        <div class="label">＜ストレスがもたらすもの＞</div>
+        <p>ネガティブなカルマの蓄積<br>人生が重く感じる</p>
+        <div class="label">＜デトックスの効果＞</div>
+        <p>ネガティブなカルマからの解放、<br>新たな機会を引き寄せる</p>
+      </div>
+      <div class="kosha-item">
+        <div class="kosha-circle" style="background: radial-gradient(circle, #F1985E 0%, #F8CBA6 60%, rgba(255,255,255,0) 100%);">智慧体<br>ヴィグニャーナマヤコーシャ</div>
+        <div class="label">＜ストレスがもたらすもの＞</div>
+        <p>無知、無意識の行動。<br>人生に制限を感じる</p>
+        <div class="label">＜デトックスの効果＞</div>
+        <p>シンクロニシティや奇跡が<br>流れてくる</p>
+      </div>
+      <div class="kosha-item">
+        <div class="kosha-circle" style="background: radial-gradient(circle, #499DE8 0%, #A9D3F5 60%, rgba(255,255,255,0) 100%);">至福体<br>アーナンダマヤコーシャ</div>
+        <div class="label">＜ストレスがもたらすもの＞</div>
+        <p>人生が無味乾燥、<br>喜びがすぐに薄れてしまう</p>
+        <div class="label">＜デトックスの効果＞</div>
+        <p>あらゆる体験、人生が喜び<br>に満ちたものになる</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature-section">
+    <h2>この講座の４つの特徴</h2>
+    <div class="feature-item">
+      <img src="bsdetox-assets/bsb-photo-lunch.jpg" alt="">
+      <h3>1．ランチ付き</h3>
+      <p>地元で採れた食材やこだわりの調味料を使い、地球と人にやさしい食事を提供するシェフが、本講座専用の特別メニューでランチをご用意。2日間のストレスデトックスを促進します。</p>
+    </div>
+    <div class="feature-item">
+      <img src="bsdetox-assets/bsb-photo-room.jpg" alt="">
+      <h3>2．癒やされる空間</h3>
+      <p>会場は都内でありながら、静かな一軒家。人生のかけがえのない時間をゆっくり振り返る、大切な人たちと穏やかに過ごすためにリフォームされた空間。ここにいるだけで癒されます。</p>
+    </div>
+    <div class="feature-item">
+      <img src="bsdetox-assets/bsb-photo-beach.jpg" alt="">
+      <h3>3．異色のコーリード</h3>
+      <p>講座を進行するのは、看護師と現役部長という異色の2人。百戦錬磨の現場経験が共通点。さまざまな状況、お悩み・ストレスに寄り添い、サポートします。</p>
+    </div>
+    <div class="feature-item">
+      <img src="bsdetox-assets/bsb-photo-laptop.jpg" alt="">
+      <h3>4．フォローアップ</h3>
+      <p>講座を終え、日常に戻ってからがあなたの人生を変えていく本番です！３ヶ月間のフォローアップをオンラインで行います。美しい状態を習慣にしていきましょう。</p>
+    </div>
+  </section>
+
+  <section class="staff-section">
+    <h2>講座リーダー</h2>
+    <div class="sub">みきナース＆玄木</div>
+    <div class="staff-item">
+      <div class="photo">
+        <img src="bsdetox-assets/bsb-staff-taniai.jpg" alt="谷合美樹">
+        <div class="name">谷合　美樹</div>
+      </div>
+      <div class="bio">
+        <p>使命：人生の最期に、一番素晴らしい時間を提供する／最期に続くまでの日常を、軽やかに・豊かに生き切るためのサポートをする</p>
+        <p>・中学３年生で祖母を肝臓がんで亡くしたことを機に看護師を志す。当時は本人にがんを告知しない時代で、「祖母は本当は何を望んでいたのだろう」という問いが、私の看護の原点となっている。</p>
+        <p>・慶義塾大学病院で25年間勤務し、がん専門相談員として延べ1万人以上の人生最終期の意思決定を支援。その後は、ホスピス・訪問看護も経験。</p>
+        <p>・40歳で更年期症状により1か月間寝込み、予防医療や食事、腸活と出会う。毎日の食事や在り方、予防行動の大切さを実感。</p>
+        <p>・2025年、ワンネスムーブメントと出会い、人生の目的が明確になる。現在はホスピス「天国につながるホームそら」の運営に伝わりながら、終末期看護師の育成、医療予防の普及と「人生の最期を一番素晴らしい時間にできる文化を日本から世界へ広げる」ことを使命として活動している。</p>
+      </div>
+    </div>
+    <div class="staff-item">
+      <div class="photo">
+        <img src="bsdetox-assets/bsb-staff-genboku.jpg" alt="玄木敦子">
+        <div class="name">玄木　敦子</div>
+      </div>
+      <div class="bio">
+        <p>使命：抜苦与楽／人それぞれの魅力や使命の発見と発揮のお手伝い</p>
+        <p>大学卒業後、金融会社に就職、現役管理職を務めつつ、副業で魅力才能開花コーチ、宿命アドバイザー、アニマルコミュニケーター、ひふみ波動セラピスト、ワンネストレーナーとして活動。</p>
+        <p>・幼少期から人の顔色を伺い自己主張できない性格。運動音痴やいじめで劣等感を抱く。就活も苦戦し、補欠入社で自信喪失。</p>
+        <p>・2005年コーチングに出会い、自分の価値観に気づいて意識が変化。2007年コーアクティブリーダーシッププログラムで自分の限界を超える体験から人生が変化していく。2013年より算命学、帝王学を学び、物事の本質や生き方・あり方を探求、宿命鑑定を開始。</p>
+        <p>・人の魅力が開花していくプロセスに立ち会うことが歓びであり、2022年より生き方・あり方をテーマに玄木塾を主宰。2025年からワンネスムーブメントに参加、出雲大社で素戔嗚尊とつながり、波動セラピーとのご縁によりエネルギーワークを開始。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonial-section">
+    <h2>講座受講者の体験談</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-item"><p>親に対する怒りと諦めの感情があることに、はじめて気がつきました。ずっとしまっていた気持ちを穏やかに観察ができ、涙が止まりませんでした。</p></div>
+      <div class="testimonial-item"><p>この講座を受けてから、ストレスは感じますが、溜まりにくくなりました！人の目が気にならなくなり、職場で苦手だった上司とも関係が改善しました。</p></div>
+      <div class="testimonial-item"><p>家族が病気になり、医療費も高額で心が落ち着かない毎日でしたが呼吸法を続けました。すると焦りが消え、医療費と同額の臨時収入が入ってきました。</p></div>
+    </div>
+  </section>
+
+  <section class="closing-message">
+    <p>いま、どんな状況にあっても大丈夫。<br>まずは一緒に立ち止まり、<br>あなた本来のチカラを取り戻しましょう</p>
+  </section>
+
+  <section class="overview-section">
+    <h2>講座概要</h2>
+    <div class="course-name">ビューティフルステート　BASIC<br>（ストレスデトックス）</div>
+
+    <div class="overview-row">
+      <div class="label">日時</div>
+      <div class="value">2026年10月17日(土)、18日(日)<br>両日とも10：00〜18：30</div>
+    </div>
+    <div class="overview-row">
+      <div class="label">場所</div>
+      <div class="value">はじまりの家　そら<br>（東久留米市内）</div>
+    </div>
+    <div class="overview-row">
+      <div class="label">参加費</div>
+      <div class="value">
+        <span class="strike">99,000円(税込)</span><br>
+        <span class="price">⇒早割　55,000円（8月31日まで）</span>
+      </div>
+    </div>
+    <div class="overview-row">
+      <div class="label">お支払</div>
+      <div class="value">銀行振込　または　PAYPAY</div>
+    </div>
+    <div class="overview-row">
+      <div class="label">持ち物</div>
+      <div class="value">ノート、筆記用具<br>動きやすい服装でお越しください</div>
+    </div>
+  </section>
 
   <div class="cta-area">
     <a id="cta-btn" class="cta-btn" href="https://line-harness.wonderwall.workers.dev/t/4e6f71e1-6706-41da-8b8d-8804e31a77b7">LINEで友だち追加する</a>
