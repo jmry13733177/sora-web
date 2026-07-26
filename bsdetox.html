@@ -15,6 +15,21 @@
   .wrap { max-width: 480px; margin: 0 auto; }
   .wrap img { display: block; width: 100%; height: auto; }
 
+  .hero {
+    position: relative;
+    background-image: url(bsdetox-assets/bsb-hero-photo.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 50px 24px 40px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.55), 0 0 2px rgba(0,0,0,0.4);
+  }
+  .hero .title1 { font-size: 26px; letter-spacing: 0.08em; line-height: 1.5; }
+  .hero .title2 { font-size: 26px; margin-bottom: 18px; }
+  .hero .title3 { font-size: 24px; font-weight: bold; margin-bottom: 22px; }
+  .hero .tagline { font-size: 15px; line-height: 1.8; }
+
   .cta-area {
     text-align: center;
     padding: 28px 20px 40px;
@@ -249,7 +264,12 @@
 </head>
 <body>
 <div class="wrap">
-  <img src="bsdetox-assets/bsb-hero.jpg" alt="">
+  <div class="hero">
+    <div class="title1">ビューティフルステート</div>
+    <div class="title2">Basic</div>
+    <div class="title3">ストレスデトックス</div>
+    <div class="tagline">ストレスを解放すると人生はもっと楽になる</div>
+  </div>
 
   <div class="cta-area">
     <a id="cta-btn-top" class="cta-btn" href="https://line-harness.wonderwall.workers.dev/t/4e6f71e1-6706-41da-8b8d-8804e31a77b7">LINEで友だち追加する</a>
@@ -271,50 +291,52 @@
     <p>この講座では、６つの技法を通じて、それぞれをデトックスしていきます。</p>
   </section>
 
+  <img src="bsdetox-assets/bsb-kosha-graphic.jpg" alt="六つの身体（コーシャ）">
+
   <section class="kosha-section">
     <h2>６つの身体（コーシャ）とストレス</h2>
     <div class="kosha-grid">
       <div class="kosha-item">
         <div class="kosha-circle" style="background: radial-gradient(circle, #CC6934 0%, #EAB98F 60%, rgba(255,255,255,0) 100%);">肉体<br>アンナマヤコーシャ</div>
         <div class="label">＜ストレスがもたらすもの＞</div>
-        <p>身体の不調、病気、早すぎる老化<br>無気力、注意力の欠如</p>
+        <p>身体の不調、病気、早すぎる老化、無気力、注意力の欠如</p>
         <div class="label">＜デトックスの効果＞</div>
-        <p>安らぎ、健康、活力、<br>細胞レベルでの若返り</p>
+        <p>安らぎ、健康、活力、細胞レベルでの若返り</p>
       </div>
       <div class="kosha-item">
         <div class="kosha-circle" style="background: radial-gradient(circle, #F5C06A 0%, #FADFAE 60%, rgba(255,255,255,0) 100%);">エネルギー体<br>プラーナマヤコーシャ</div>
         <div class="label">＜ストレスがもたらすもの＞</div>
-        <p>詰まったエネルギー、創造的表現の<br>喪失、先の見えない停滞感</p>
+        <p>詰まったエネルギー、創造的表現の喪失、先の見えない停滞感</p>
         <div class="label">＜デトックスの効果＞</div>
-        <p>ブレイクスルーと<br>新たな扉が人生に現れる</p>
+        <p>ブレイクスルーと新たな扉が人生に現れる</p>
       </div>
       <div class="kosha-item">
         <div class="kosha-circle" style="background: radial-gradient(circle, #7060E0 0%, #B3ABEE 60%, rgba(255,255,255,0) 100%);">マインド体<br>マノーマヤコーシャ</div>
         <div class="label">＜ストレスがもたらすもの＞</div>
-        <p>未解決の感情、過去の傷に<br>囚われる、トラウマや恐れ</p>
+        <p>未解決の感情、過去の傷に囚われる、トラウマや恐れ</p>
         <div class="label">＜デトックスの効果＞</div>
-        <p>両親との関係性が癒される、<br>人生が開かれていく</p>
+        <p>両親との関係性が癒される、人生が開かれていく</p>
       </div>
       <div class="kosha-item">
         <div class="kosha-circle" style="background: radial-gradient(circle, #3267CF 0%, #9BB6E8 60%, rgba(255,255,255,0) 100%);">カルマ体<br>カルママヤコーシャ</div>
         <div class="label">＜ストレスがもたらすもの＞</div>
-        <p>ネガティブなカルマの蓄積<br>人生が重く感じる</p>
+        <p>ネガティブなカルマの蓄積、人生が重く感じる</p>
         <div class="label">＜デトックスの効果＞</div>
-        <p>ネガティブなカルマからの解放、<br>新たな機会を引き寄せる</p>
+        <p>ネガティブなカルマからの解放、新たな機会を引き寄せる</p>
       </div>
       <div class="kosha-item">
         <div class="kosha-circle" style="background: radial-gradient(circle, #F1985E 0%, #F8CBA6 60%, rgba(255,255,255,0) 100%);">智慧体<br>ヴィグニャーナマヤコーシャ</div>
         <div class="label">＜ストレスがもたらすもの＞</div>
-        <p>無知、無意識の行動。<br>人生に制限を感じる</p>
+        <p>無知、無意識の行動。人生に制限を感じる</p>
         <div class="label">＜デトックスの効果＞</div>
-        <p>シンクロニシティや奇跡が<br>流れてくる</p>
+        <p>シンクロニシティや奇跡が流れてくる</p>
       </div>
       <div class="kosha-item">
         <div class="kosha-circle" style="background: radial-gradient(circle, #499DE8 0%, #A9D3F5 60%, rgba(255,255,255,0) 100%);">至福体<br>アーナンダマヤコーシャ</div>
         <div class="label">＜ストレスがもたらすもの＞</div>
-        <p>人生が無味乾燥、<br>喜びがすぐに薄れてしまう</p>
+        <p>人生が無味乾燥、喜びがすぐに薄れてしまう</p>
         <div class="label">＜デトックスの効果＞</div>
-        <p>あらゆる体験、人生が喜び<br>に満ちたものになる</p>
+        <p>あらゆる体験、人生が喜びに満ちたものになる</p>
       </div>
     </div>
   </section>
